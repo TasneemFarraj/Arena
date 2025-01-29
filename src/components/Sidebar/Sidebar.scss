@@ -2,7 +2,7 @@
   font-size: 29.24px;
   line-height: 45.69px;
   width: 326px;
-  height: calc(100vh - 40px);
+  height: calc(100vh - 4px);
   top: 20px;
   left: 296px;
   border-radius: 16px;
@@ -16,15 +16,18 @@
     &.collapsed {
       width: 108px;
       display: flex;
-      padding: 16px;
       flex-direction: column;
       align-items: flex-start;
       flex: 1 0 0;
       align-self: stretch;
-  
+      
+      .menu{
+        padding: 12px;
+        justify-content: center;
+
+      }
     
     .header {
-      width: 76px;
       height: 68.71px;
       padding: 6px 12px;
       border-radius: 12px;
@@ -34,12 +37,11 @@
    
     .logo-container {
       border-radius: 12px;
-      background: #0C1A46;
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 60px;
-      height: 60px;
+      width: 39.78px;
+      height: 42.087px;
       align-self: center;
       transition: all 0.3s ease;
     }
@@ -56,14 +58,14 @@
     .header-menu {
       display: none;
     }
-
+   
     .menu-icon {
       margin: 0 auto;
     }
 
       .toggle {
         position: absolute;
-        left: 150px;
+        left: 120px;
         top: 39px;
         display: flex;
         width: 28px;
@@ -78,22 +80,19 @@
         }
       }
     }
-  }
+  }}
   .header-menu{
     font-family: Cairo;
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
     line-height: 25px;
-    padding: 0px 24px;
-    width: 99.97px;
-    height: 41.93px;
-    width: 294px;
+    padding-left: 40px;
+    padding-bottom: 4px;
 
     }
 
   .header {
-    // width: 294px;
     row-gap: 10px;
     height: 68.71px;
     padding: 6px 12px;
@@ -104,9 +103,6 @@
     background-color: #0c1a46;
     margin: 16px;
     
-
- 
-
     .logo-container {
       display: flex;
       align-items: center;
@@ -121,7 +117,6 @@
         cursor: pointer;
 
       }
-
       .app-name {
         margin-left: 10px;
         font-weight: 500;
@@ -176,9 +171,8 @@
         font-weight: 500;
         line-height: 25px;
 
-
         &::placeholder {
-          color: #bbb;
+          color: #EFF6FF;
         }
       }
 
@@ -217,7 +211,7 @@
     overflow-y: auto;
 
   &::-webkit-scrollbar {
-    width: 8px;
+    width: 4px;
   }
 
   &::-webkit-scrollbar-thumb {
@@ -238,15 +232,17 @@
       display: flex;
       padding: 8px 12px;
       align-items: center;
-      gap: 12px;
       flex: 1 0 0;
       cursor: pointer;
       transition: background 0.2s ease;
       border-radius: 8px;
-      margin-top: 6px;
-      margin-right: 12px;
-      margin-left: 12px;
-
+      margin-left: 16px;
+      margin-right: 16px;
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1 0 0;
       &:hover {
         background: rgba(239, 246, 255, 0.2);
       }
@@ -258,7 +254,6 @@
       .menu-icon {
         width: 24px;
         height: 24px;
-        margin-right: 20px;
       }
 
       .menu-text {
@@ -277,4 +272,4 @@
       }
     }
   }
-}
+
