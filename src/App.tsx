@@ -1,19 +1,17 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Sidebar from "./components/Sidebar/Sidebar";
+import Layout from "./components/Layout";
+import KnowledgeBase from "./components/KnowledgeBase/KnowledgeBase";
 
 const App: React.FC = () => {
   return (
     <Router>
-      <div className="app">
-        <Sidebar />
-        <div className="content">
-          <Routes>
-            <Route path="/workflow-management"/>
-            <Route path="/knowledge-base"/>
-          </Routes>
-        </div>
-      </div>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="knowledge-base" element={<KnowledgeBase />} />
+          <Route path="/workflow-management"/>
+        </Route>
+      </Routes>
     </Router>
   );
 };
