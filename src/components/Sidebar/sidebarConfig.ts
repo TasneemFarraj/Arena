@@ -29,6 +29,8 @@ export const sidebarItems = [
       name: "Workflow Management",
       icon: WorkflowManagement,
       route: "/workflow-management",
+      expandable: true,
+
     },
     {
       name: "Audit Trail",
@@ -76,6 +78,8 @@ export const sidebarItems = [
       name: "Knowledge Base",
       icon: KnowledgeBase,
       route: "/knowledge-base",
+      expandable: true,
+
     },
     {
       name: "License Management",

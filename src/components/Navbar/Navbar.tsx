@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import "./Navbar.scss";
 
+
 const Navbar: React.FC = () => {
   const location = useLocation();
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
@@ -22,25 +23,25 @@ const Navbar: React.FC = () => {
 
       <div className="navbar-right">
         <div className="nav-item">
-          <img src="/src/assets/home-icon.svg" alt="Home" className="icon" />
+          <img src="/src/assets/Home.svg" alt="Home" className="icon" />
           <span>Home</span>
         </div>
 
         <div className="nav-item">
-          <img src="/src/assets/notification-icon.svg" alt="Notification" className="icon" />
+          <img src="/src/assets/Notification.svg" alt="Notification" className="icon" />
           <span>Notification</span>
         </div>
 
         <div className="nav-item">
-          <img src="/src/assets/language-icon.svg" alt="Language" className="icon" />
+          <img src="/src/assets/lang.svg" alt="Language" className="icon" />
           <span>English</span>
         </div>
 
         <div className="dropdown-container">
           <div className="nav-item" onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}>
-            <img src="/src/assets/user-icon.svg" alt="User" className="icon" />
+            <img src="/src/assets/Profile.svg" alt="User" className="icon" />
             <span>User Names</span>
-            <span>{isUserMenuOpen ? "▲" : "▼"}</span>
+            <span>{isUserMenuOpen ?<img src="/src/assets/SmallArrow -UpCircle.svg" alt="Up" className="icon" /> : <img src="/src/assets/SmallArrow - Down Circle.svg" alt=" Down" className="icon"  />}</span>
           </div>
           {isUserMenuOpen && (
             <ul className="dropdown-menu">

@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import "./KnowledgeBase.scss";
 import { knowledgeBaseData } from "./knowledgeBaseConfig";
 
+
 const KnowledgeBase: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10; 
+  const [showAddNewOverlay, setShowAddNewOverlay] = useState(false);
+  const itemsPerPage = 10;
 
   const totalPages = Math.ceil(knowledgeBaseData.length / itemsPerPage);
-
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const currentData = knowledgeBaseData.slice(startIndex, endIndex);
@@ -19,16 +20,37 @@ const KnowledgeBase: React.FC = () => {
   };
 
   return (
-  
     <div className="knowledge-base">
-     <div className="white-space">Space</div>
-      <div className="header">
-        <h2>Knowledge Base</h2>
-        <div className="actions">
-          <button className="filter-btn">Filter</button>
-          <button className="add-btn">+ Add New</button>
-        </div>
-      </div>
+     <div className="knowledge-header">
+  <div className="knowledge-header-actions">
+    <button className="view-toggle">
+    <img src="/src/assets/Card View squ.svg" alt="Home" className="icon" />
+
+      <span>Card View</span>
+      </button>
+      <button className="view-toggle">
+      <img src="/src/assets/Card View.svg" alt="Home" className="icon" />
+      {/* <span>List View</span> */}
+    </button>
+
+    <div className="search-bar">
+  <img src="/src/assets/Search.svg" alt="Search" className="search-icon" />
+  <input type="text" placeholder="Search" className="search-input" />
+</div> 
+    <button className="filter-btn">
+    <img src="/src/assets/filter.svg" alt="Home" className="icon" />
+    <span>Filter</span>
+    </button>
+
+    <button
+      className="add-btn"
+      onClick={() => setShowAddNewOverlay(true)}
+    >
+      <img src="/src/assets/addSign.svg" alt="Article Icon" className="icon-footer" />
+      Add New
+    </button>
+  </div>
+</div>
       <div className="card-container">
         {currentData.map((item) => (
           <div key={item.id} className="card">
@@ -37,9 +59,18 @@ const KnowledgeBase: React.FC = () => {
               <h3>{item.title}</h3>
               <p>{item.description}</p>
               <div className="card-footer">
-                <span>{item.sections} Sections</span>
-                <span>{item.articles} Articles</span>
-              </div>
+  <span>
+    <img src="/src/assets/folder.svg" alt="Section Icon" className="icon-footer" />
+    {item.sections} Sections 
+    
+  </span>
+  <span>
+    <img src="/src/assets/note-text.svg" alt="Article Icon" className="icon-footer" />
+    {item.articles} Articles 
+    
+  </span>
+</div>
+
             </div>
           </div>
         ))}
@@ -56,14 +87,14 @@ const KnowledgeBase: React.FC = () => {
             onClick={() => handlePageChange(1)}
             disabled={currentPage === 1}
           >
-            &lt;&lt; {/* << */}
+            &lt;&lt;
           </button>
           <button
             className="pagination-button"
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
           >
-            &lt; {/* < */}
+            &lt;
           </button>
           {[...Array(5)].map((_, index) => (
             <button
@@ -81,17 +112,88 @@ const KnowledgeBase: React.FC = () => {
             onClick={() => handlePageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
           >
-            &gt; {/* > */}
+            &gt;
           </button>
           <button
             className="pagination-button"
             onClick={() => handlePageChange(totalPages)}
             disabled={currentPage === totalPages}
           >
-            &gt;&gt; {/* >> */}
+            &gt;&gt;
           </button>
         </div>
       </div>
+
+      {/* Add New Collection Overlay */}
+      {showAddNewOverlay && (
+        <div className="overlay">
+          <div className="overlay-content">
+          <button
+              className="close-icon"
+              onClick={() => setShowAddNewOverlay(false)}
+            >
+              &times; 
+            </button>
+            <h2>Add New Collection</h2>
+            <form>
+              <div className="form-group">
+                <label htmlFor="collection-name">Collection Name*</label>
+                <input
+                  type="text"
+                  id="collection-name"
+                  placeholder="Arena"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="description">Description</label>
+                <textarea
+                  id="description"
+                  placeholder="Description"
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="tags">Tags*</label>
+                <input
+                  type="text"
+                  id="tags"
+                  placeholder="Placeholder"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="access-level">Access Level*</label>
+                <input
+                  type="text"
+                  id="access-level"
+                  placeholder="Placeholder"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label>Upload Thumbnail</label>
+                <div className="upload-area">
+                  Click here to upload your Collection Thumbnail or drag and drop.
+                  <br />
+                  Supported Formats: SQL, INC, PNG (10MB each)
+                </div>
+              </div>
+              <div className="form-actions">
+                <button
+                  type="button"
+                  className="cancel-btn"
+                  onClick={() => setShowAddNewOverlay(false)} 
+                >
+                  Cancel
+                </button>
+                <button type="submit" className="submit-btn">
+                  Save
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

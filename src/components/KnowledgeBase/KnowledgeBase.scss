@@ -1,81 +1,206 @@
-.knowledge-base {
+.shared-width {
   width: 1038px;
-  height: auto; 
-  padding: 20px;
-  background: white;
+  margin-left: 12px;
+}
+.knowledge-base {
+  @extend .shared-width;
+  height: 972px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-left: auto;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  position: relative; 
 
-  .header {
+  .knowledge-header {
     display: flex;
-    justify-content: space-between;
+    width: 1038px;
+    gap: 21px;
+    padding: 10px 12px;
+    margin: 19px 12px;
     align-items: center;
-    height: 20px;
-    margin-bottom: 20px;
-  }
+    justify-content: space-between; 
+    background: #fff;
+    border-radius: 12px;
+  
+    .knowledge-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1; 
+  
+      .view-toggle {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+        color: #172554;
+        background: none;
+        cursor: pointer;
+      }
+  
+      .search-bar {
+        display: flex;
+        align-items: center;
+        padding: 10px 12px;
+        gap: 21px;
+        flex: 2; 
+        max-width: 60%; 
+        justify-content: center;
+        border-radius: 8px;
+        border: 1px solid #f1f5f9;
+        background: #fff;
+  
+        .search-icon {
+          width: 24px;
+          height: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+  
+        .search-input {
+          flex: 1;
+          border: none;
+          outline: none;
+          font-size: 14px;
+          color: #374151;
+          background: transparent;
+  
+          &::placeholder {
+            color: #999;
+          }
+        }
+      }
 
-  .actions {
-    display: flex;
-    gap: 10px;
-  }
+      .filter-btn {
+        display: flex; 
+        align-items: center; 
+        gap: 8px; 
+        background: none; 
+        border: none; 
+        color: #172554; 
+        cursor: pointer;
+        padding: 8px 12px; 
+        font-size: 14px; 
+      }
+    
+      .add-btn {
+        border-radius: 8px;
+        background:  #2563EB;
+        display: flex;
+        width: 110px;
+        padding: 10px 12px;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        color: #EFF6FF;
+        font-variant-numeric: lining-nums proportional-nums;
+        font-family: Cairo;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px; 
 
-  .filter-btn,
-  .add-btn {
-    padding: 8px 12px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
+      }
+    }
+  
+    .left-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1; 
+    }
+  
+    .right-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1; 
+      justify-content: flex-end;
+    }
   }
-
-  .add-btn {
-    background: #007bff;
-    color: white;
-  }
-.white-space{
-  width: 1038px;
-  height: auto; 
-  padding: 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+  
   .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    width:1034px;
+    height: 560px;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(2, auto);
+    padding-left: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 19px;
+
   }
 
   .card {
     background: white;
-    border-radius: 8px;
-    padding: 15px;
-    text-align: center;
+    border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    min-width: 249.5px;
+    max-width: 304px;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 0 0;
   }
 
   .card-image {
-    width: 100%;
-    height: auto;
+    width: 221.5px;
+    height: 122px;
+    padding: 14px 14px 0 14px;
+    border-radius: 8px;
+    
   }
 
   .card-content {
-    margin-top: 10px;
-  }
+    padding: 12px 14px 14px 14px;
+    h3 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #172554; 
+   }
 
-  .card-footer {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
-    color: gray;
+    p {
+      color:  #94A3B8;
+      font-variant-numeric: lining-nums proportional-nums;
+      font-family: Cairo;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 14px; 
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      color: #000000;
+      font-family: Cairo;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 28px; 
+      display: flex;
+      align-items: flex-start;
+      gap: 49px;
+      align-self: stretch;
+    
+      .icon-footer {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        margin-right: 6px; 
+        vertical-align: middle; 
+      }
+    }
+    
   }
 
   .pagination-footer {
     display: flex;
-    background-color: aqua;
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
@@ -116,6 +241,96 @@
           color: white;
           border-color: #007bff;
         }
+      }
+    }
+  }
+
+  .overlay {
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: flex-end; 
+    align-items: flex-start;
+    z-index: 1000;
+  }
+
+  .overlay-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; 
+    margin-right: 20px; 
+
+    .close-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #666;
+
+      &:hover {
+        color: #000;
+      }
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .upload-area {
+        border: 2px dashed #ccc;
+        padding: 20px;
+        text-align: center;
+        color: #666;
+        cursor: pointer;
+      }
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+
+      .cancel-btn {
+        background: #ccc;
+        color: #333;
+      }
+
+      .submit-btn {
+        background: #007bff;
+        color: white;
+      }
+
+      button {
+        padding: 8px 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
       }
     }
   }
