@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./KnowledgeBase.scss";
 import { knowledgeBaseData } from "./knowledgeBaseConfig";
 
-
 const KnowledgeBase: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [showAddNewOverlay, setShowAddNewOverlay] = useState(false);
@@ -21,36 +20,37 @@ const KnowledgeBase: React.FC = () => {
 
   return (
     <div className="knowledge-base">
-     <div className="knowledge-header">
-  <div className="knowledge-header-actions">
-    <button className="view-toggle">
-    <img src="/src/assets/Card View squ.svg" alt="Home" className="icon" />
+         <div className="top-box">
+      </div>
+      <div className="knowledge-header">
+        <div className="white-space"></div>
+        <div className="knowledge-header-actions">
+          <button className="view-toggle">
+            <img src="/src/assets/Card View squ.svg" alt="Card View" className="icon" />
+            <span>Card View</span>
+          </button>
+          <button className="view-toggle">
+            <img src="/src/assets/Card View.svg" alt="List View" className="icon" />
+          </button>
 
-      <span>Card View</span>
-      </button>
-      <button className="view-toggle">
-      <img src="/src/assets/Card View.svg" alt="Home" className="icon" />
-      {/* <span>List View</span> */}
-    </button>
+          <div className="search-bar">
+            <img src="/src/assets/search-normal.svg" alt="Search" className="search-icon" />
+            <input type="text" placeholder="Search" className="search-input" />
+          </div>
+          <button className="filter-btn">
+            <img src="/src/assets/filter.svg" alt="Filter" className="icon" />
+            <span>Filter</span>
+          </button>
 
-    <div className="search-bar">
-  <img src="/src/assets/Search.svg" alt="Search" className="search-icon" />
-  <input type="text" placeholder="Search" className="search-input" />
-</div> 
-    <button className="filter-btn">
-    <img src="/src/assets/filter.svg" alt="Home" className="icon" />
-    <span>Filter</span>
-    </button>
-
-    <button
-      className="add-btn"
-      onClick={() => setShowAddNewOverlay(true)}
-    >
-      <img src="/src/assets/addSign.svg" alt="Article Icon" className="icon-footer" />
-      Add New
-    </button>
-  </div>
-</div>
+          <button
+            className="add-btn"
+            onClick={() => setShowAddNewOverlay(true)}
+          >
+            <img src="/src/assets/addSign.svg" alt="Add New" className="icon-footer" />
+            Add New
+          </button>
+        </div>
+      </div>
       <div className="card-container">
         {currentData.map((item) => (
           <div key={item.id} className="card">
@@ -59,18 +59,15 @@ const KnowledgeBase: React.FC = () => {
               <h3>{item.title}</h3>
               <p>{item.description}</p>
               <div className="card-footer">
-  <span>
-    <img src="/src/assets/folder.svg" alt="Section Icon" className="icon-footer" />
-    {item.sections} Sections 
-    
-  </span>
-  <span>
-    <img src="/src/assets/note-text.svg" alt="Article Icon" className="icon-footer" />
-    {item.articles} Articles 
-    
-  </span>
-</div>
-
+                <span>
+                  <img src="/src/assets/folder.svg" alt="Section Icon" className="icon-footer" />
+                  {item.sections} Sections 
+                </span>
+                <span>
+                  <img src="/src/assets/note-text.svg" alt="Article Icon" className="icon-footer" />
+                  {item.articles} Articles 
+                </span>
+              </div>
             </div>
           </div>
         ))}
@@ -87,39 +84,38 @@ const KnowledgeBase: React.FC = () => {
             onClick={() => handlePageChange(1)}
             disabled={currentPage === 1}
           >
-            &lt;&lt;
+          <img src="/src/assets/Arrow - leftt 2.svg" alt="Section Icon" className="icon-footer" />
           </button>
           <button
             className="pagination-button"
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
           >
-            &lt;
+          <img src="/src/assets/Arrow - Left .svg" alt="Section Icon" className="icon-footer" />
           </button>
-          {[...Array(5)].map((_, index) => (
-            <button
-              key={index}
-              className={`pagination-button ${
-                currentPage === index + 1 ? "active" : ""
-              }`}
-              onClick={() => handlePageChange(index + 1)}
-            >
-              {index + 1}
-            </button>
-          ))}
+          {[1, 2, 3, 4, 5].map((page) => (
+      <button
+        key={page}
+        className={`pagination-button ${currentPage === page ? "active" : ""}`}
+        onClick={() => handlePageChange(page)}
+        disabled={page > totalPages}
+      >
+        {page}
+      </button>
+    ))}
           <button
             className="pagination-button"
             onClick={() => handlePageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
           >
-            &gt;
+          <img src="/src/assets/Arrow - Right .svg" alt="Section Icon" className="icon-footer" />
           </button>
           <button
             className="pagination-button"
             onClick={() => handlePageChange(totalPages)}
             disabled={currentPage === totalPages}
           >
-            &gt;&gt;
+          <img src="/src/assets/Arrow - Right 2.svg" alt="Section Icon" className="icon-footer" />
           </button>
         </div>
       </div>
@@ -128,7 +124,7 @@ const KnowledgeBase: React.FC = () => {
       {showAddNewOverlay && (
         <div className="overlay">
           <div className="overlay-content">
-          <button
+            <button
               className="close-icon"
               onClick={() => setShowAddNewOverlay(false)}
             >
@@ -137,7 +133,7 @@ const KnowledgeBase: React.FC = () => {
             <h2>Add New Collection</h2>
             <form>
               <div className="form-group">
-                <label htmlFor="collection-name">Collection Name*</label>
+                <label htmlFor="collection-name">Collection Name</label>
                 <input
                   type="text"
                   id="collection-name"
@@ -153,7 +149,7 @@ const KnowledgeBase: React.FC = () => {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="tags">Tags*</label>
+                <label htmlFor="tags">Tags</label>
                 <input
                   type="text"
                   id="tags"
@@ -162,7 +158,7 @@ const KnowledgeBase: React.FC = () => {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="access-level">Access Level*</label>
+                <label htmlFor="access-level">Access Level</label>
                 <input
                   type="text"
                   id="access-level"
@@ -173,6 +169,7 @@ const KnowledgeBase: React.FC = () => {
               <div className="form-group">
                 <label>Upload Thumbnail</label>
                 <div className="upload-area">
+                  <img src="/src/assets/document-upload.svg" alt="Upload Icon" className="icon-footer" />
                   Click here to upload your Collection Thumbnail or drag and drop.
                   <br />
                   Supported Formats: SQL, INC, PNG (10MB each)
@@ -182,7 +179,7 @@ const KnowledgeBase: React.FC = () => {
                 <button
                   type="button"
                   className="cancel-btn"
-                  onClick={() => setShowAddNewOverlay(false)} 
+                  onClick={() => setShowAddNewOverlay(false)}
                 >
                   Cancel
                 </button>

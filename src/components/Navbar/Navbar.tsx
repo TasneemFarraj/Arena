@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
 
         <div className="dropdown-container">
           <div className="nav-item" onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}>
-            <img src="/src/assets/Profile.svg" alt="User" className="icon" />
+            <img src="/src/assets/Profile.svg" alt="User" className="user-icon" />
             <span>User Names</span>
             <span>{isUserMenuOpen ?<img src="/src/assets/SmallArrow -UpCircle.svg" alt="Up" className="icon" /> : <img src="/src/assets/SmallArrow - Down Circle.svg" alt=" Down" className="icon"  />}</span>
           </div>

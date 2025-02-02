@@ -38,5 +38,29 @@ export const knowledgeBaseData = [
         articles: 50,
         image: Thumbnil
       },
+      {
+        id: 5,
+        title: "Collection Name",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        sections: 12,
+        articles: 50,
+        image: Thumbnil
+      },
+      {
+        id: 5,
+        title: "Collection Name",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        sections: 12,
+        articles: 50,
+        image: Thumbnil
+      },
+      {
+        id: 5,
+        title: "Collection Name",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        sections: 12,
+        articles: 50,
+        image: Thumbnil
+      },
    
   ];

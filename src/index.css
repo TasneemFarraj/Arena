@@ -18,9 +18,9 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  /* min-width: 320px; */
   min-height: 100vh;
-  background-color: #1f71c3;
-  /* overflow: hidden; */
+  background-color: #F1F5F9;
+  overflow: auto;
 }
 

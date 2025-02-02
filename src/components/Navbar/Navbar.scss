@@ -1,10 +1,9 @@
-
 .navbar {
   display: flex;
   justify-content: space-between;
   border-radius: 12px;
   align-items: center; 
-  padding: 19px 30px;
+  padding: 5px 20px;
   margin-left: 12px;
   margin-top: 30px;
   background-color: #FFFFFF;
@@ -14,9 +13,8 @@
   color: #142452;
   height: 80px;
   width: 1038px;
-  margin-left: 19px;
+  margin-left: 22px;
   border-bottom: 1px solid #EBECF2;
-
 
   .navbar-left {
     display: flex;
@@ -27,7 +25,7 @@
     .navbar-title {
       font-size: 20px;
       font-weight: bold;
-      margin-left: 20px;
+      margin-left: 50px;
     }
   }
 
@@ -54,6 +52,21 @@
       display: inline-block;
       cursor: pointer;
 
+      .icon{
+        width: 8.403px;
+        height: 4.961px;
+        flex-shrink: 0;
+        margin: 7px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+            }
+        .user-icon
+        {
+        background-color: #EBECF2 ;
+        border-radius: 50%;
+        padding: 10px;
+        }
       .dropdown-menu {
         position: absolute;
         top: 40px;
