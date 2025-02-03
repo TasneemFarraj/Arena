@@ -21,6 +21,6 @@ body {
   /* min-width: 320px; */
   min-height: 100vh;
   background-color: #F1F5F9;
-  overflow: auto;
+  overflow: hidden;
 }
 

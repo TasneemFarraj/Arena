@@ -11,15 +11,15 @@
   display: flex;
   flex-direction: column;
   position: relative; 
-  
+
+
   .top-box {
     background-color: #fff; 
     padding: 20px;
     @extend .shared-width;
     border-radius: 8px;
     margin-top: 19px;
-    height: 137px;
-    flex: 1 0 0;
+    height: 100px;
     text-align: center;
   
     h2 {
@@ -112,7 +112,6 @@
         color: #172554; 
         cursor: pointer;
         padding: 8px 12px; 
-    
         font-size: 14px; 
       }
     
@@ -155,15 +154,33 @@
   
   .card-container {
     display: grid;
-    width:1034px;
-    height: 560px;
+    width:1090px;
+    height: 490px;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(2, auto);
     padding-left: 12px;
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
-
+    overflow-y: scroll;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 16px; 
+    }
+  
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: rgba(255, 255, 255, 0.5); 
+    }
+  
+    &::-webkit-scrollbar-track {
+      background-color: rgba(23, 37, 84, 0.8); 
+      border-radius: 16px; 
+    }
   }
 
   .card {
@@ -252,7 +269,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 17px;
-    margin: 62px 12px;
+    margin: 19px 12px;
 
     .pagination {
       display: flex;
@@ -297,129 +314,5 @@
           border-color: #2C4FA4;
         }
       }
-    }
-  }
+    }}}
 
-  .overlay {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(50, 50, 50, 0.5));
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-    z-index: 1000;
-  }
-  
-  .overlay-content {
-    background: white;
-    color: #333;
-    padding: 20px;
-    border-radius: 12px;
-    width: 500px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-    margin-right: 20px;
-    transition: all 0.3s ease-in-out;
-  
-    .close-icon {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: none;
-      border: none;
-      font-size: 24px;
-      cursor: pointer;
-      color: #666;
-      transition: color 0.2s ease-in-out;
-  
-      &:hover {
-        color: #000;
-      }
-    }
-  
-    h2 {
-      margin-bottom: 20px;
-    }
-  
-    .form-group {
-      margin-bottom: 15px;
-  
-      label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-  
-        &::after {
-          content: '*';
-          color: #ff0000;
-          margin-left: 4px;
-        }
-      }
-  
-      input,
-      textarea {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        background-color: #F8FAFC;
-        border-radius: 8px;
-        transition: border-color 0.2s ease-in-out;
-  
-        &:hover {
-          border-color: #60A5FA;
-        }
-      }
-    }
-  
-    .upload-area {
-      border: 2px dashed #007bff;
-      padding: 30px;
-      text-align: center;
-      color: #007bff;
-      background: rgba(0, 123, 255, 0.1);
-      transition: background 0.2s ease-in-out;
-      cursor: pointer;
-  
-      &:hover {
-        background: rgba(0, 123, 255, 0.2);
-      }
-    }
-  
-    .form-actions {
-      display: flex;
-      justify-content: flex-end;
-      gap: 10px;
-  
-      .cancel-btn {
-        background: #f5f5f5;
-        color: #333;
-        padding: 8px 12px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background 0.2s ease-in-out;
-  
-        &:hover {
-          background: #e0e0e0;
-        }
-      }
-  
-      .submit-btn {
-        background: #007bff;
-        color: white;
-        padding: 8px 12px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background 0.2s ease-in-out;
-  
-        &:hover {
-          background: darken(#007bff, 10%);
-        }
-      }
-    }
-  }
-}  

@@ -39,7 +39,7 @@ export const knowledgeBaseData = [
         image: Thumbnil
       },
       {
-        id: 5,
+        id: 6,
         title: "Collection Name",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         sections: 12,
@@ -47,7 +47,7 @@ export const knowledgeBaseData = [
         image: Thumbnil
       },
       {
-        id: 5,
+        id: 7,
         title: "Collection Name",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         sections: 12,
@@ -55,7 +55,7 @@ export const knowledgeBaseData = [
         image: Thumbnil
       },
       {
-        id: 5,
+        id: 8,
         title: "Collection Name",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         sections: 12,
