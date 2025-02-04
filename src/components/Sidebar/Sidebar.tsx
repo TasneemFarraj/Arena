@@ -16,17 +16,18 @@ const Sidebar: React.FC = () => {
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value.toLowerCase());
   };
-
   const handleItemClick = (item: SidebarItem) => {
     if (item.route) {
       setActiveRoute(item.route);
       navigate(item.route);
+      setIsSubmenuVisible(false);
     } else if (item.expandable) {
-      setIsSubmenuVisible(!isSubmenuVisible);
+      setIsSubmenuVisible(true);
       setActiveSubmenu(item.name);
-      setIsCollapsed(true); // Collapse sidebar when a submenu is toggled
+      setIsCollapsed(true);
     }
   };
+  
 
   const handleCloseSubmenu = () => {
     setIsSubmenuVisible(false);
@@ -49,7 +50,7 @@ const Sidebar: React.FC = () => {
       <div className={`submenu ${isSubmenuVisible ? "visible" : ""}`}>
         <button className="close-submenu-btn" onClick={handleCloseSubmenu}>
           <img
-            src="/src/assets/close-icon.svg"
+            src="/src/assets/white-round-close.png"
             alt="Close"
             width={24}
             height={24}
@@ -62,6 +63,7 @@ const Sidebar: React.FC = () => {
               className={`menu-item ${subItem.route === activeRoute ? "active" : ""}`}
               onClick={() => handleItemClick(subItem)}
             >
+
               <img
                 src={subItem.icon}
                 alt={`${subItem.name} Icon`}
@@ -79,8 +81,8 @@ const Sidebar: React.FC = () => {
   };
   return (
     <>
-      <div className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
-        <div className="header">
+              <div className={`sidebar ${isCollapsed ? "collapsed" : ""} ${isSubmenuVisible ? "with-submenu" : ""}`}>
+              <div className="header">
           <div className="logo-container" onClick={() => navigate("/")}>
             <img
               src="/src/assets/Arena-logo-icon.svg"

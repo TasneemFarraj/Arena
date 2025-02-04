@@ -38,13 +38,13 @@ export const sidebarItems = [
     subItems: [
       { 
         name: "Sub Item 1", 
-        icon: "/src/assets/sub-item1-icon.svg", 
+        icon: "/src/assets/Home.svg", 
         route: "/sub-item1", 
         description: "Description for Sub Item 1"
       },
       { 
         name: "Sub Item 2", 
-        icon: "/src/assets/sub-item2-icon.svg", 
+        icon: "/src/assets/Notification.svg", 
         route: "/sub-item2", 
         description: "Description for Sub Item 2"
       }
@@ -83,13 +83,6 @@ export const sidebarItems = [
     name: "Lead Management",
     icon: LeadManagement,
     expandable: true,
-    description: "Oversee and analyze sales leads and opportunities."
-  },
-  {
-    name: "Knowledge Base",
-    icon: KnowledgeBase,
-    route: "/knowledge-base",
-    expandable: true,
     subItems: [
       { 
         name: "Sub Item 3", 
@@ -99,11 +92,17 @@ export const sidebarItems = [
       },
       { 
         name: "Sub Item 4", 
-        icon: "/src/assets/sub-item4-icon.svg", 
+        icon: "/src/assets/license.svg", 
         route: "/sub-item4", 
         description: "Description for Sub Item 4"
       }
-    ]
+    ]  },
+  {
+    name: "Knowledge Base",
+    icon: KnowledgeBase,
+    route: "/knowledge-base",
+    expandable: true,
+  
   },
   {
     name: "License Management",

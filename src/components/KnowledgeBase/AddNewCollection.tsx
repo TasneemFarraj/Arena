@@ -67,7 +67,7 @@ const AddNewCollection: React.FC<AddNewCollectionProps> = ({
         </div>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="collectionName">
+            <label className="collectionName" style={{marginTop:"29px"}}>
               Collection Name
               <span className="helper-icon">!</span>
             </label>
@@ -86,7 +86,7 @@ const AddNewCollection: React.FC<AddNewCollectionProps> = ({
           </div>
 
           <div className="form-group">
-            <label htmlFor="description">
+            <label className="description">
               Description
               <span className="helper-icon">!</span>
             </label>
@@ -103,8 +103,8 @@ const AddNewCollection: React.FC<AddNewCollectionProps> = ({
 
           <div className="tags-access-container">
             <div className="form-group">
-              <label htmlFor="tags">Tags</label>
-              <img src="/src/assets/category-2.svg" alt="Tag Icon" className="icon" style={{ marginTop: "25px" }} />
+              <label className="tags">Tags</label>
+              <img src="/src/assets/category-2.svg" alt="Tag Icon" className="icon" style={{ marginTop: "20px" }} />
               <input
                 type="text"
                 id="tags"
@@ -116,11 +116,11 @@ const AddNewCollection: React.FC<AddNewCollectionProps> = ({
             </div>
 
             <div className="form-group">
-              <label htmlFor="accessLevel">Access Level</label>
+              <label className="accessLevel">Access Level</label>
               <div className="input-wrapper">
-                <img src="/src/assets/setting-4.svg" alt="Lock Icon" className="icon" />
+                <img src="/src/assets/setting-4.svg" alt="Lock Icon" className="icon"  />
                 <select
-                  style={{ height: "42px", width: "290px", padding: "5px 12px 12px 35px", gap: "12px" }}
+                  style={{ height: "42px", width: "280px", padding: "5px 12px 12px 35px", gap: "12px" }}
                   id="accessLevel"
                   value={formState.accessLevel}
                   onChange={handleInputChange}
@@ -137,7 +137,7 @@ const AddNewCollection: React.FC<AddNewCollectionProps> = ({
 
           <div className="form-group">
             <div className="upload-container">
-              <label htmlFor="thumbnail" className="upload-area">
+              <label className="thumbnail" className="upload-area">
                 {imagePreview ? (
                   <img src={imagePreview} alt="Thumbnail Preview" className="thumbnail-preview" />
                 ) : (
