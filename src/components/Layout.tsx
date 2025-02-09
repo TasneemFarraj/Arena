@@ -8,6 +8,7 @@ const Layout: React.FC = () => {
   return (
     <div className="layout">
       <Sidebar />
+      
       <div className="main-content">
         <Navbar />
         <div className="content">

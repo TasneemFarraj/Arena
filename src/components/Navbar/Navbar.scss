@@ -11,7 +11,7 @@
   stroke: #D8DAE5;
   color: #142452;
   height: 42px;
-  width: 978px;
+  width: 100%;
   margin-left: 22px;
   border-bottom: 1px solid #EBECF2;
 
@@ -99,5 +99,12 @@
         }
       }
     }
+  }
+}
+@media (max-width: 1440px) {
+  .navbar {
+    max-width: 980px;
+    width: 100%;
+    margin-left: 25px;
   }
 }

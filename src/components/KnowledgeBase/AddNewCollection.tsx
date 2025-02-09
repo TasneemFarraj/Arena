@@ -137,7 +137,7 @@ const AddNewCollection: React.FC<AddNewCollectionProps> = ({
 
           <div className="form-group">
             <div className="upload-container">
-              <label className="thumbnail" className="upload-area">
+              <label className="upload-area">
                 {imagePreview ? (
                   <img src={imagePreview} alt="Thumbnail Preview" className="thumbnail-preview" />
                 ) : (

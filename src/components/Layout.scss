@@ -1,7 +1,10 @@
 .layout {
   display: grid;
   grid-template-columns: auto 1fr; 
+  margin: 30px;
 }
-// .content{
-//    overflow-y: scroll;
-// }
+
+.sidebar {
+  transition: width 0.3s ease;
+}
+

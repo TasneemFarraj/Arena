@@ -16,20 +16,20 @@ export const sidebarItems = [
   {
     name: "Dashboard",
     icon: Dashboard,
-    expandable: true,
+    // expandable: true,
     description: "Access the main dashboard and monitor key activities."
   },
   {
     name: "User Management",
     icon: UserManagement,
-    expandable: true,
+    // expandable: true,
     description: "Manage users, their roles, and permissions."
   },
   {
     name: "Workflow Management",
     icon: WorkflowManagement,
     route: "/workflow-management",
-    expandable: true,
+    // expandable: true,
   },
   {
     name: "Audit Trail",
@@ -53,24 +53,48 @@ export const sidebarItems = [
     name: "Customer Transactions",
     icon: CustomerTransactions,
     expandable: true,
-    description: "Manage and track customer transactions and financial activities."
-  },
+    subItems: [
+      { 
+        name: "Sub Item 3", 
+        icon: "/src/assets/admin.svg", 
+        route: "/sub-item3", 
+        description: "Description for Sub Item 3"
+      },
+      { 
+        name: "Sub Item 4", 
+        icon: "/src/assets/license.svg", 
+        route: "/sub-item4", 
+        description: "Description for Sub Item 4"
+      }
+    ]   },
   {
     name: "Customer 360",
     icon: Customer360,
     expandable: true,
-    description: "View comprehensive customer data and history in one place."
-  },
+    subItems: [
+      { 
+        name: "Sub Item 3", 
+        icon: "/src/assets/admin.svg", 
+        route: "/sub-item3", 
+        description: "Description for Sub Item 3"
+      },
+      { 
+        name: "Sub Item 4", 
+        icon: "/src/assets/license.svg", 
+        route: "/sub-item4", 
+        description: "Description for Sub Item 4"
+      }
+    ] },
   {
     name: "Customer Onboarding",
     icon: CustomerOnboarding,
-    expandable: true,
+    // expandable: true,
     description: "Handle the registration and onboarding process for new customers."
   },
   {
     name: "Complaints Management",
     icon: ComplaintsManagement,
-    expandable: true,
+    // expandable: true,
     description: "Track and resolve customer complaints and feedback."
   },
   {
@@ -101,19 +125,31 @@ export const sidebarItems = [
     name: "Knowledge Base",
     icon: KnowledgeBase,
     route: "/knowledge-base",
-    expandable: true,
+    // expandable: true,
   
   },
   {
     name: "License Management",
     icon: LicenseManagement,
     expandable: true,
-    description: "Handle software licenses, renewals, and compliance."
-  },
+    subItems: [
+      { 
+        name: "Sub Item 3", 
+        icon: "/src/assets/admin.svg", 
+        route: "/sub-item3", 
+        description: "Description for Sub Item 3"
+      },
+      { 
+        name: "Sub Item 4", 
+        icon: "/src/assets/license.svg", 
+        route: "/sub-item4", 
+        description: "Description for Sub Item 4"
+      }
+    ]   },
   {
     name: "Admin Settings",
     icon: AdminSettings,
-    expandable: true,
+    // expandable: true,
     description: "Configure and manage application settings and user roles."
   }
 ];

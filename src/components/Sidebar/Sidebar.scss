@@ -2,7 +2,7 @@
   font-size: 29.24px;
   line-height: 45.69px;
   width: 326px;
-  height: calc(100vh - 10px);
+  height: calc(100vh - 60px);
   left: 296px;
   border-radius: 16px;
   background-color: #172554;
@@ -71,8 +71,8 @@
 
       .toggle {
         position: absolute;
-        left: 150px;
-        top:30px;
+        left: 180px;
+        top:55px;
         display: flex;
         width: 28px;
         height: 28px;
@@ -89,6 +89,7 @@
     }
   }
 }
+
   .close-submenu-btn {
     position: absolute;
     top: 10px;
@@ -101,10 +102,10 @@
 
 .submenu {
   position: fixed;
-  top: 0;
-  left: 108px; 
-  width: 250px;
-  height: 100vh;
+  top: 30;
+  left: 138px; 
+  width: 200px;
+  height: calc(100vh - 40px);
   background-color: #172554;
   color: #fff;
   transition: transform 0.3s ease;
@@ -116,20 +117,30 @@
   border-bottom-right-radius: 16px;
   overflow-y: auto;
   .sidebar {
-
-         
+   
     &.collapsed.with-submenu {
       border-bottom-right-radius: 0%;
       border-top-right-radius: 0%;
     }
-}}
+   
+}
+}
 
 .submenu.visible {
   transform: translateX(0);
 }
+.main-content {
+  transition: margin-left 0.3s ease;
+  margin-left:0px; 
+}
 
-  
-  
+.submenu.visible + .main-content {
+  margin-left: 200px; 
+}
+.menu-icon {
+filter: brightness(100);
+}
+ 
   .header-menu{
     font-family: Cairo;
     font-size: 18px;
@@ -188,7 +199,7 @@
   .menu-text-container {
     display: flex;
     flex-direction: column;
-    gap: 4px; // 
+    gap: 4px; 
   }
   
   .submenu-description {
@@ -353,4 +364,12 @@
       }
     }
   }
+  @media screen and (height: 1020px) {
+    .sidebar {
+      height: calc(100vh - 50px);
+    }
+    .submenu{
+      height: calc(100vh - 30px);
 
+    }
+  }
